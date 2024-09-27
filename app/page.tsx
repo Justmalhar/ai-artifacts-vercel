@@ -175,48 +175,61 @@ export default function Home() {
   }
 
   return (
-    <main className="flex min-h-screen max-h-screen">
-      {
-        supabase && <AuthDialog open={isAuthDialogOpen} setOpen={setAuthDialog} view={authView} supabase={supabase} />
-      }
-      <NavBar
-        session={session}
-        showLogin={() => setAuthDialog(true)}
-        signOut={logout}
-        templates={templates}
-        selectedTemplate={selectedTemplate}
-        onSelectedTemplateChange={setSelectedTemplate}
-        models={modelsList.models}
-        languageModel={languageModel}
-        onLanguageModelChange={handleLanguageModelChange}
-        onGitHubClick={handleGitHubClick}
-        onNewChat={handleNewChat}
-        apiKeyConfigurable={!process.env.NEXT_PUBLIC_NO_API_KEY_INPUT}
-        baseURLConfigurable={!process.env.NEXT_PUBLIC_NO_BASE_URL_INPUT}
-      />
+<main className="flex flex-col min-h-screen">
+  {supabase && (
+    <AuthDialog
+      open={isAuthDialogOpen}
+      setOpen={setAuthDialog}
+      view={authView}
+      supabase={supabase}
+      className="w-full max-w-md mx-auto my-4 px-4"
+    />
+  )}
+  
+  <NavBar
+    session={session}
+    showLogin={() => setAuthDialog(true)}
+    signOut={logout}
+    templates={templates}
+    selectedTemplate={selectedTemplate}
+    onSelectedTemplateChange={setSelectedTemplate}
+    models={modelsList.models}
+    languageModel={languageModel}
+    onLanguageModelChange={handleLanguageModelChange}
+    onGitHubClick={handleGitHubClick}
+    onNewChat={handleNewChat}
+    apiKeyConfigurable={!process.env.NEXT_PUBLIC_NO_API_KEY_INPUT}
+    baseURLConfigurable={!process.env.NEXT_PUBLIC_NO_BASE_URL_INPUT}
+    className="w-full"
+  />
 
-<div className="flex-1 flex flex-col md:flex-row w-full pt-36 pb-8 px-4">
-  <Chat
-    isLoading={isLoading}
-    stop={stop}
-    messages={messages}
-    input={chatInput}
-    handleInputChange={handleSaveInputChange}
-    handleSubmit={handleSubmitAuth}
-    isMultiModal={currentModel?.multiModal || false}
-    files={files}
-    handleFileChange={handleFileChange}
-  />
-  <SideView
-    selectedTab={currentTab}
-    onSelectedTabChange={setCurrentTab}
-    isLoading={isPreviewLoading}
-    artifact={artifact as ArtifactSchema}
-    result={result}
-    selectedTemplate={artifact?.template as TemplateId}
-  />
-</div>
-      
-    </main>
+  <div className="flex-1 flex flex-col md:flex-row w-full px-4 pt-4 pb-8 space-y-4 md:space-y-0 md:space-x-4">
+    <div className="flex-1">
+      <Chat
+        isLoading={isLoading}
+        stop={stop}
+        messages={messages}
+        input={chatInput}
+        handleInputChange={handleSaveInputChange}
+        handleSubmit={handleSubmitAuth}
+        isMultiModal={currentModel?.multiModal || false}
+        files={files}
+        handleFileChange={handleFileChange}
+        className="w-full h-full"
+      />
+    </div>
+    <div className="md:w-1/3 lg:w-1/4">
+      <SideView
+        selectedTab={currentTab}
+        onSelectedTabChange={setCurrentTab}
+        isLoading={isPreviewLoading}
+        artifact={artifact as ArtifactSchema}
+        result={result}
+        selectedTemplate={artifact?.template as TemplateId}
+        className="w-full h-full"
+      />
+    </div>
+  </div>
+</main>
   )
 }
