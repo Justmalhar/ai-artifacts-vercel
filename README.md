@@ -101,7 +101,7 @@ npm run build
 
 You can deploy your own version of the AI Artifacts app to Vercel with one click:
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=AI+Artifacts+Vercel&demo-description=An+AI+artifacts+repository+app+built+with+Next.js&project-name=AI+Artifacts+Vercel&repository-name=ai-artifacts-vercel&repository-url=https%3A%2F%2Fgithub.com%2FJustmalhar%2Fai-artifacts-vercel&from=templates&skippable-integrations=1&env=E2B_API_KEY%2COPENAI_API_KEY%2CANTHROPIC_API_KEY%2CGROQ_API_KEY%2CFIREWORKS_API_KEY%2CTOGETHER_AI_API_KEY%2CGOOGLE_AI_API_KEY%2CMISTRAL_API_KEY&envDescription=Set+the+following+environment+variables&envLink=https%3A%2F%2Fgithub.com%2FJustmalhar%2Fai-artifacts-vercel%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden&stores=%5B%7B%22type%22%3A%22kv%22%7D%5D)
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?demo-title=AI+Artifacts+Vercel&demo-description=An+AI+artifacts+repository+app+built+with+Next.js&project-name=AI+Artifacts+Vercel&repository-name=ai-artifacts-vercel&repository-url=https%3A%2F%2Fgithub.com%2FJustmalhar%2Fai-artifacts-vercel&from=templates&skippable-integrations=1&env=E2B_API_KEY%2COPENAI_API_KEY%2CANTHROPIC_API_KEY%2CGROQ_API_KEY%2CFIREWORKS_API_KEY%2CTOGETHER_AI_API_KEY%2CGOOGLE_AI_API_KEY%2CMISTRAL_API_KEY&envDescription=Set+the+following+environment+variables&envLink=https%3A%2F%2Fgithub.com%2FJustmalhar%2Fai-artifacts-vercel%2Fblob%2Fmain%2F.env.example&teamCreateStatus=hidden)
 
 
 ## Customize
