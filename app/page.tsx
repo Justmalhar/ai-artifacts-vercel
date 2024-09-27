@@ -195,27 +195,28 @@ export default function Home() {
         baseURLConfigurable={!process.env.NEXT_PUBLIC_NO_BASE_URL_INPUT}
       />
 
-      <div className="flex-1 flex space-x-8 w-full pt-36 pb-8 px-4">
-        <Chat
-          isLoading={isLoading}
-          stop={stop}
-          messages={messages}
-          input={chatInput}
-          handleInputChange={handleSaveInputChange}
-          handleSubmit={handleSubmitAuth}
-          isMultiModal={currentModel?.multiModal || false}
-          files={files}
-          handleFileChange={handleFileChange}
-        />
-        <SideView
-          selectedTab={currentTab}
-          onSelectedTabChange={setCurrentTab}
-          isLoading={isPreviewLoading}
-          artifact={artifact as ArtifactSchema}
-          result={result}
-          selectedTemplate={artifact?.template as TemplateId}
-        />
-      </div>
+<div className="flex-1 flex flex-col md:flex-row w-full pt-36 pb-8 px-4">
+  <Chat
+    isLoading={isLoading}
+    stop={stop}
+    messages={messages}
+    input={chatInput}
+    handleInputChange={handleSaveInputChange}
+    handleSubmit={handleSubmitAuth}
+    isMultiModal={currentModel?.multiModal || false}
+    files={files}
+    handleFileChange={handleFileChange}
+  />
+  <SideView
+    selectedTab={currentTab}
+    onSelectedTabChange={setCurrentTab}
+    isLoading={isPreviewLoading}
+    artifact={artifact as ArtifactSchema}
+    result={result}
+    selectedTemplate={artifact?.template as TemplateId}
+  />
+</div>
+      
     </main>
   )
 }
