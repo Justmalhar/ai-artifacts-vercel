@@ -176,15 +176,9 @@ export default function Home() {
 
   return (
 <main className="flex flex-col min-h-screen">
-  {supabase && (
-    <AuthDialog
-      open={isAuthDialogOpen}
-      setOpen={setAuthDialog}
-      view={authView}
-      supabase={supabase}
-      className="w-full max-w-md mx-auto my-4 px-4" // Now accepted
-    />
-  )}
+{
+        supabase && <AuthDialog open={isAuthDialogOpen} setOpen={setAuthDialog} view={authView} supabase={supabase} />
+      }
 
   <NavBar
     session={session}
