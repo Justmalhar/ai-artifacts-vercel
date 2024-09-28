@@ -194,7 +194,7 @@ export default function Home() {
     onNewChat={handleNewChat}
     apiKeyConfigurable={!process.env.NEXT_PUBLIC_NO_API_KEY_INPUT}
     baseURLConfigurable={!process.env.NEXT_PUBLIC_NO_BASE_URL_INPUT}
-    className="w-full"
+    
   />
 
   <div className="flex-1 flex flex-col md:flex-row w-full px-4 pt-4 pb-8 space-y-4 md:space-y-0 md:space-x-4">
